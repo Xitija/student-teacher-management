@@ -81,7 +81,7 @@ export const studentsSlice = createSlice({
             .addCase(updateStudentAsync.fulfilled, (state, action) => {
                 state.status = 'success';
                 const updatedStudent = action.payload;
-                const index = state.students.findIndex((s) => s.id === updatedStudent._id)
+                const index = state.students.findIndex((s) => s._id === updatedStudent._id)
                 if (index !== -1) {
                     state.students[index] = updatedStudent;
                 }
