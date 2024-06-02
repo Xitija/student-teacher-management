@@ -5,9 +5,7 @@ import axios from "axios";
 const HOST_URL = `https://2c463a04-897a-4e5a-9fd7-ae15835b9731-00-2gwpouugm900g.picard.replit.dev`;
 
 export const fetchStudents = createAsyncThunk('students/fetchStudents', async () => {
-    console.log("test");
     const response = await axios.get(HOST_URL + `/students`);
-    console.log(response, "ok");
     return response.data;
 })
 
@@ -34,6 +32,7 @@ const initialState = {
     students: [],
     status: 'idle',
     error: null,
+    selectedClass: "All",
     filter: "All",
     sortBy: "name"
 }
@@ -42,6 +41,9 @@ export const studentsSlice = createSlice({
     name: 'students',
     initialState,
     reducers: {
+        setClass: (state, action) => {
+            state.selectedClass = action.payload
+        },
         setFilter: (state, action) => {
             state.filter = action.payload;
         },
@@ -56,7 +58,6 @@ export const studentsSlice = createSlice({
             })
             .addCase(fetchStudents.fulfilled, (state, action) => {
                 state.status = 'success';
-                console.log(action.payload, "appp")
                 state.students = action.payload;
             })
             .addCase(fetchStudents.rejected, (state, action) => {
@@ -80,9 +81,6 @@ export const studentsSlice = createSlice({
             .addCase(updateStudentAsync.fulfilled, (state, action) => {
                 state.status = 'success';
                 const updatedStudent = action.payload;
-                console.log(updatedStudent,
-                    "updatedState"
-                )
                 const index = state.students.findIndex((s) => s.id === updatedStudent._id)
                 if (index !== -1) {
                     state.students[index] = updatedStudent;
@@ -96,7 +94,6 @@ export const studentsSlice = createSlice({
                 state.status = 'loading'
             })
             .addCase(deleteStudentAsync.fulfilled, (state, action) => {
-                console.log(state.students , action ,"ookk")
                 state.status = 'success';
                 state.students = state.students.filter((student) => student._id !== action.payload.student._id)
             })
@@ -119,6 +116,6 @@ export const studentsSlice = createSlice({
     }
 })
 
-export const { setFilter, setSortBy } = studentsSlice.actions;
+export const { setFilter, setSortBy, setClass } = studentsSlice.actions;
 
 export default studentsSlice.reducer;

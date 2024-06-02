@@ -13,25 +13,22 @@ const SchoolView = () => {
   useEffect(() => {
     const totalStudents = students.length;
     const totalAttendance = students.reduce(
-      (sum, student) => (sum + (student.attendance === 'Present') ? 1 : 0),
+      (sum, student) => sum + student.attendance,
       0
     );
 
     const averageAttendance = totalAttendance / totalStudents;
-    console.log(students, 'stt');
     const totalMarks = students.reduce(
       (sum, student) => sum + student.marks,
       0
     );
-    console.log(totalMarks, totalStudents, 'vfe');
+
     const averageMarks = totalMarks / totalStudents;
 
     const topStudent = students.reduce((prev, current) => {
-      console.log(current, prev);
       return current.marks > prev.marks ? current : prev;
     }, students[0]);
 
-    console.log(topStudent, 'tops');
     dispatch(
       updateSchoolStats({
         totalStudents,

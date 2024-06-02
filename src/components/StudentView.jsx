@@ -7,14 +7,12 @@ import { fetchStudents } from "../features/students/studentsSlice";
 const StudentView = () => {
     const dispatch = useDispatch();
     const students = useSelector((state) => {
-        console.log(state);
         return state.students.students
     });
     const status = useSelector((state) => state.students.status);
     const error = useSelector((state) => state.students.error);
 
     useEffect(() => {
-        console.log(status);
         if (status === 'idle') {
             dispatch(fetchStudents())
         }

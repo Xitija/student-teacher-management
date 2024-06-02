@@ -91,7 +91,7 @@ const StudentForm = () => {
       </div>
       {student && (
         <>
-          <label>Mark Attendance:</label>
+          {/* <label>Mark Attendance:</label>
           <select
             value={attendance}
             onChange={(e) => setAttendance(e.target.value)}
@@ -99,7 +99,13 @@ const StudentForm = () => {
             <option value="">Select</option>
             <option value="Present">Present</option>
             <option value="Absent">Absent</option>
-          </select>
+          </select> */}
+           <input
+            type='text'
+            placeholder='Attendance'
+            value={attendance}
+            onChange={(e) => setAttendance(e.target.value)}
+          />
           <input
             type="text"
             placeholder="Marks"
