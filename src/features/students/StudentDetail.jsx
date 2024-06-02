@@ -26,7 +26,7 @@ const StudentDetail = () => {
       <p>Grade: {student.grade}</p>
       <p>Attendance: {student.attendance}</p>
       <p>Marks: {student.marks}</p>
-      <Link to={`/students/edit/${student.id}`} state={student}>
+      <Link to={`/students/edit/${student._id}`} state={student}>
         Edit Details
       </Link>
       <button onClick={() => handleDelete(student._id)}>Delete</button>
