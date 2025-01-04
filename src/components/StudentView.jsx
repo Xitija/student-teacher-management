@@ -22,13 +22,28 @@ const StudentView = () => {
     <div>
       <h1>Student View</h1>
       {status === 'loading' && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
+      {error && (<p>Error: {error}</p>)}
 
       <StudentList students={students} />
 
       <h3>
         <Link to={`/students/add`}>Add Student</Link>
       </h3>
+
+      {error && (
+        <div>
+          <h2>Server Not Active 😨</h2>
+          <h3>
+            <a
+              href="https://drive.google.com/file/d/19xueS21oFeXLMYqLNy4OxKdQHVnAdKCA/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Click here to view video
+            </a>
+          </h3>
+        </div>
+      )}
     </div>
   );
 };
