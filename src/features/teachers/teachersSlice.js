@@ -1,5 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const HOST_URL = `https://2c463a04-897a-4e5a-9fd7-ae15835b9731-00-2gwpouugm900g.picard.replit.dev`;
