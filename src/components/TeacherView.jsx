@@ -30,6 +30,21 @@ const TeacherView = () => {
       <h3>
         <Link to={`/teachers/add`}>Add Teacher</Link>
       </h3>
+
+      {error && (
+        <div>
+          <h2>Server Not Active 😨</h2>
+          <h3>
+            <a
+              href="https://drive.google.com/file/d/19xueS21oFeXLMYqLNy4OxKdQHVnAdKCA/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Click here to view video
+            </a>
+          </h3>
+        </div>
+      )}
     </div>
   );
 };
