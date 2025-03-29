@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import home from '../images/home.svg';
 
-
 const NavBar = () => {
   const getActiveStyle = ({ isActive }) => ({
     color: isActive ? '#003366' : ''
@@ -9,14 +8,13 @@ const NavBar = () => {
 
   return (
     <div
-      className="flex p-4 text-xl font-semibold justify-between"
+      className="flex p-4 text-base md:text-xl font-semibold justify-between"
       style={{ background: '#00c5b4', color: '#ffffff' }}
     >
-      <NavLink className='w-7' style={getActiveStyle} to="/">
-      <img src={home}  alt="home" />
-
+      <NavLink className="w-7" style={getActiveStyle} to="/">
+        <img src={home} alt="home" />
       </NavLink>
-      <div className="flex flex-row justify-end gap-3">
+      <div className="flex flex-row justify-end gap-2 md:gap-4">
         <NavLink style={getActiveStyle} to="/school">
           School
         </NavLink>
