@@ -53,17 +53,40 @@ const SchoolView = () => {
       <div className="w-full md:w-1/3">
         <img className="w-full" src={pic31} alt="School" />
       </div>
-      <div className="w-full md:w-1/3 p-2 flex flex-col justify-center items-center space-y-5 bg-white">
-        <h1 style={{ color: "#e14141"}} className="text-4xl font-bold underline">School Statistics</h1>
-        <div className="text-2xl ">
-          <p>Total Students: <span className='font-semibold'>{schoolStats.totalStudents}</span></p>
-          <p>Average Attendance: <span className='font-semibold'>{schoolStats.averageAttendance.toFixed(2)}</span></p>
-          <p>Average Marks: <span className='font-semibold'>{schoolStats.averageMarks.toFixed(2)}</span></p>
+      <div className="w-full md:w-1/3 p-6 flex flex-col justify-center items-center space-y-6 bg-white border-t md:border-t-0 md:border-x border-gray-200">
+        <h1 className="text-3xl md:text-4xl font-bold text-center relative">
+          <span className="text-red-600 underline">School Statistics</span>
+        </h1>
+
+        <div className="w-full space-y-3 text-gray-700">
+          <div className="flex justify-between items-center">
+            <p className="text-lg">Total Students:</p>
+            <p className="text-xl font-semibold">{schoolStats.totalStudents}</p>
+          </div>
+
+          <div className="flex justify-between items-center">
+            <p className="text-lg">Avg. Attendance:</p>
+            <p className="text-xl font-semibold">
+              {schoolStats.averageAttendance.toFixed(2)}%
+            </p>
+          </div>
+
+          <div className="flex justify-between items-center">
+            <p className="text-lg">Avg. Marks:</p>
+            <p className="text-xl font-semibold">
+              {schoolStats.averageMarks.toFixed(2)}
+            </p>
+          </div>
         </div>
-        <p className="text-2xl font-semibold">
-          Top Student:{' '}
-          {schoolStats.topStudent ? schoolStats.topStudent.name : '-'}
-        </p>
+
+        <div className="w-full pt-3 border-t border-gray-200">
+          <div className="flex items-center justify-center space-x-2">
+            <p className="text-lg">Top Student:</p>
+            <p className="text-xl font-bold text-red-600">
+              {schoolStats.topStudent ? schoolStats.topStudent.name : '-'}
+            </p>
+          </div>
+        </div>
       </div>
       <div className="w-full md:w-1/3 self-end">
         <img className="w-full" src={pic32} alt="School" />
