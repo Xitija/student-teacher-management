@@ -32,7 +32,7 @@ const HomeView = () => {
   }, [status, dispatch]);
 
   return (
-    <div className="flex object-cover w-full flex-col md:flex-row">
+    <div className="flex w-full flex-col md:flex-row">
       <img className="w-full md:w-1/2" src={ns1} alt="NS1" />
       <img className="w-full md:w-1/2" src={ns2} alt="NS2" />
     </div>
