@@ -13,23 +13,27 @@ import { Toaster } from 'react-hot-toast';
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App h-screen flex flex-col">
       <Router>
-        <Toaster position="bottom-left"/>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomeView />} />
-          <Route path="/school" element={<SchoolView />} />
-          <Route path="/classes" element={<ClassView />} />
-          <Route path="/students" element={<StudentView />} />
-          <Route path="/students/:id" element={<StudentDetail />} />
-          <Route path="/students/add" element={<StudentForm />} />
-          <Route path="/students/edit/:id" element={<StudentForm />} />
-          <Route path="/teachers" element={<TeacherView />} />
-          <Route path="/teachers/:id" element={<TeacherDetail />} />
-          <Route path="/teachers/add" element={<TeacherForm />} />
-          <Route path="/teachers/edit/:id" element={<TeacherForm />} />
-        </Routes>
+        <Toaster position="bottom-left" />
+        {/* Navbar with fixed height */}
+        <NavBar className="h-16" />
+        {/* Main content area */}
+        <div className="flex-1 overflow-auto">
+          <Routes>
+            <Route path="/" element={<HomeView />} />
+            <Route path="/school" element={<SchoolView />} />
+            <Route path="/classes" element={<ClassView />} />
+            <Route path="/students" element={<StudentView />} />
+            <Route path="/students/:id" element={<StudentDetail />} />
+            <Route path="/students/add" element={<StudentForm />} />
+            <Route path="/students/edit/:id" element={<StudentForm />} />
+            <Route path="/teachers" element={<TeacherView />} />
+            <Route path="/teachers/:id" element={<TeacherDetail />} />
+            <Route path="/teachers/add" element={<TeacherForm />} />
+            <Route path="/teachers/edit/:id" element={<TeacherForm />} />
+          </Routes>
+        </div>
       </Router>
     </div>
   );
