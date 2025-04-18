@@ -4,13 +4,18 @@ import {
   setTopStudent,
   updateSchoolStats
 } from '../features/school/schoolSlice';
+import { fetchStudents } from '../features/students/studentsSlice';
 
 const SchoolView = () => {
   const schoolStats = useSelector((state) => state.school);
   const students = useSelector((state) => state.students.students);
+  const status = useSelector((state) => state.students.status);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchStudents());
+    }
     const totalStudents = students.length;
     const totalAttendance = students.reduce(
       (sum, student) => sum + student.attendance,
