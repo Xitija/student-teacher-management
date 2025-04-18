@@ -9,11 +9,13 @@ import TeacherForm from './features/teachers/TeacherForm';
 import TeacherDetail from './features/teachers/TeacherDetail';
 import HomeView from './components/HomeView';
 import NavBar from './components/NavBar';
+import { Toaster } from 'react-hot-toast';
 
 export default function App() {
   return (
     <div className="App">
       <Router>
+        <Toaster position="bottom-left"/>
         <NavBar />
         <Routes>
           <Route path="/" element={<HomeView />} />
