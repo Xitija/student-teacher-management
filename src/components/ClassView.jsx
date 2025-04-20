@@ -53,21 +53,26 @@ const ClassView = () => {
   }, [status, dispatch]);
   return (
     <div className="flex flex-wrap w-full h-full">
+      {/* Left Image */}
       <div className="w-full md:w-1/3">
-        <img className="w-full" src={pic33} alt="School" />
+        <img className="w-full" src={pic34} alt="School" />
       </div>
-      <div className="w-full md:w-1/3 p-2 flex flex-col justify-center items-center space-y-4 bg-white">
+
+      {/* Content Section */}
+      <div className="w-full md:w-1/3 p-2 flex flex-col bg-white">
         <h1
           style={{ color: '#e14141' }}
-          className="text-4xl font-bold underline"
+          className="text-3xl md:text-4xl font-bold underline text-center mb-2"
         >
           Class View
         </h1>
-        <div className="flex flex-wrap gap-3 p-3 bg-gray-50 rounded-lg mb-4">
+
+        {/* Filters Section */}
+        <div className="flex flex-wrap gap-2 p-2 bg-gray-50 rounded-lg mb-2">
           <div className="flex items-center">
             <label
               htmlFor="selectClass"
-              className="mr-2 text-sm font-medium text-gray-700"
+              className="mr-1 text-sm font-medium text-gray-700"
             >
               Class:
             </label>
@@ -87,7 +92,7 @@ const ClassView = () => {
           <div className="flex items-center">
             <label
               htmlFor="filter"
-              className="mr-2 text-sm font-medium text-gray-700"
+              className="mr-1 text-sm font-medium text-gray-700"
             >
               Gender:
             </label>
@@ -106,7 +111,7 @@ const ClassView = () => {
           <div className="flex items-center">
             <label
               htmlFor="sortBy"
-              className="mr-2 text-sm font-medium text-gray-700"
+              className="mr-1 text-sm font-medium text-gray-700"
             >
               Sort By:
             </label>
@@ -122,23 +127,25 @@ const ClassView = () => {
             </select>
           </div>
         </div>
-        <div className="w-full overflow-x-auto rounded-lg shadow">
+
+        {/* Table Container - Make it flex-grow to fill available space */}
+        <div className="flex-grow w-full overflow-auto rounded-lg shadow">
           <table className="w-full text-sm text-left text-gray-700">
-            <thead className="text-xs uppercase bg-gray-100">
+            <thead className="text-xs uppercase bg-gray-100 sticky top-0">
               <tr>
-                <th scope="col" className="px-4 py-3 font-medium">
+                <th scope="col" className="px-3 py-2 font-medium">
                   Name
                 </th>
-                <th scope="col" className="px-4 py-3 font-medium">
+                <th scope="col" className="px-3 py-2 font-medium">
                   Gender
                 </th>
-                <th scope="col" className="px-4 py-3 font-medium">
+                <th scope="col" className="px-3 py-2 font-medium">
                   Marks
                 </th>
-                <th scope="col" className="px-4 py-3 font-medium">
+                <th scope="col" className="px-3 py-2 font-medium">
                   Attendance
                 </th>
-                <th scope="col" className="px-4 py-3 font-medium">
+                <th scope="col" className="px-3 py-2 font-medium">
                   Class
                 </th>
               </tr>
@@ -151,21 +158,21 @@ const ClassView = () => {
                 >
                   <th
                     scope="row"
-                    className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
+                    className="px-3 py-2 font-medium text-gray-900 whitespace-nowrap"
                   >
                     {student.name}
                   </th>
-                  <td className="px-4 py-3">{student.gender}</td>
-                  <td className="px-4 py-3">{student.marks}</td>
-                  <td className="px-4 py-3">{student.attendance}</td>
-                  <td className="px-4 py-3">{student.grade}</td>
+                  <td className="px-3 py-2">{student.gender}</td>
+                  <td className="px-3 py-2">{student.marks}</td>
+                  <td className="px-3 py-2">{student.attendance}</td>
+                  <td className="px-3 py-2">{student.grade}</td>
                 </tr>
               ))}
               {sortedStudents.length === 0 && (
                 <tr className="bg-white">
                   <td
                     colSpan="5"
-                    className="px-4 py-3 text-center text-gray-500"
+                    className="px-3 py-2 text-center text-gray-500"
                   >
                     No students found
                   </td>
@@ -175,8 +182,10 @@ const ClassView = () => {
           </table>
         </div>
       </div>
+
+      {/* Right Image */}
       <div className="w-full md:w-1/3 self-end">
-        <img className="w-full" src={pic34} alt="School" />
+        <img className="w-full" src={pic33} alt="School" />
       </div>
     </div>
   );
