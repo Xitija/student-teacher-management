@@ -11,8 +11,6 @@ const HomeView = () => {
   const status = useSelector((state) => state.school.status);
   const error = useSelector((state) => state.school.error);
 
-  console.log('Status:', status);
-
   useEffect(() => {
     if (status === 'idle') {
       toast.promise(
@@ -29,7 +27,10 @@ const HomeView = () => {
         }
       );
     }
-  }, [status, dispatch]);
+    if (error) {
+      console.log('Error:', error);
+    }
+  }, [status, dispatch, error]);
 
   return (
     <div className="flex w-full flex-col md:flex-row">

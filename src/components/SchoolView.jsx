@@ -46,7 +46,7 @@ const SchoolView = () => {
     );
 
     dispatch(setTopStudent(topStudent));
-  }, [students, dispatch]);
+  }, [students, dispatch, status]);
 
   return (
     <div className="flex flex-wrap w-full h-full">
