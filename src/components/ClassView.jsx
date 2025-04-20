@@ -59,10 +59,10 @@ const ClassView = () => {
       </div>
 
       {/* Content Section */}
-      <div className="w-full md:w-1/3 p-2 flex flex-col bg-white">
+      <div className="w-full md:w-1/3 p-2 flex flex-col bg-white space-y-4">
         <h1
           style={{ color: '#e14141' }}
-          className="text-3xl md:text-4xl font-bold underline text-center mb-2"
+          className="text-2xl md:text-3xl font-bold underline text-center mb-2"
         >
           Class View
         </h1>
