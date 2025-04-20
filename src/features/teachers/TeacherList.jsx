@@ -12,7 +12,8 @@ const TeacherList = ({ teachers }) => {
             className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow"
           >
             <Link
-              to={`/teachers/${teacher._id}`}
+              to={`/teachers/edit/${teacher._id}`}
+              state={teacher}
               className="block text-gray-800 hover:text-blue-500 font-medium"
             >
               <p className="text-lg">{teacher.name}</p>
