@@ -55,7 +55,7 @@ const SchoolView = () => {
       </div>
       <div className="w-full md:w-1/3 p-6 flex flex-col justify-center items-center space-y-6 bg-white border-t md:border-t-0 md:border-x border-gray-200">
         <h1 className="text-3xl md:text-4xl font-bold text-center relative">
-          <span className="text-red-600 underline">School Statistics</span>
+          <span className="text-[#e14141] underline">School Statistics</span>
         </h1>
 
         <div className="w-full space-y-3 text-gray-700">
