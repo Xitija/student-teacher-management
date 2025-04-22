@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Student-Teacher Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive web application for managing students, teachers, and school-related data built with **React**, **Redux Toolkit**, and **TailwindCSS**.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Student Management** - Add, edit, delete, and view student details
+- **Teacher Management** - Add, edit, delete, and view teacher details
+- **Class View** - Filter and sort students by class, gender, marks, and attendance
+- **School Statistics** - View total students, average attendance, average marks, and top-performing student
+- **Responsive Design** - Optimized for both desktop and mobile devices
+- **Toast Notifications** - Provides feedback for server interactions
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, React Router, TailwindCSS
+- **State Management**: Redux Toolkit
+- **Backend API**: Axios for API calls to the server
+- **Testing**: React Testing Library, Jest
+- **Icons**: React Icons
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+src/
+├── components/   # Reusable UI components
+├── features/     # Redux slices and feature-specific components
+├── images/       # Static images used in the app
+├── App.js        # Main application component
+├── index.js      # Entry point of the app
+├── store.js      # Redux store configuration
+└── index.css     # Global styles
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Xitija/student-teacher-management.git
+   cd student-teacher-management
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Start the development server:
+   ```sh
+   npm run start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app will be available at http://localhost:3000.
 
-### `npm run eject`
+## Scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Command | Description |
+|---------|-------------|
+| `npm start` | Runs the app in development mode |
+| `npm run build` | Builds the app for production |
+| `npm test` | Launches the test runner in interactive watch mode |
+| `npm run eject` | Ejects the app configuration (use with caution) |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The app interacts with a backend server hosted at `https://schoolmanagementapis.onrender.com`. Key endpoints:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/students` | GET | Fetch all students |
+| `/students` | POST | Add a new student |
+| `/students/:id` | PUT | Update a student's details |
+| `/students/:id` | DELETE | Delete a student |
+| `/teachers` | GET | Fetch all teachers |
+| `/teachers` | POST | Add a new teacher |
+| `/teachers/:id` | PUT | Update a teacher's details |
+| `/teachers/:id` | DELETE | Delete a teacher |
+| `/health` | GET | Check server health |
 
-## Learn More
+## Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To build the app for production:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+npm run build
+```
 
-### Code Splitting
+The production-ready files will be available in the `build/` directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Screenshots
 
-### Analyzing the Bundle Size
+### Home View
+<!-- ![Home View](path/to/home-view-screenshot.png) -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Student Management
+<!-- ![Student Management](path/to/student-management-screenshot.png) -->
 
-### Making a Progressive Web App
+### Teacher Management
+<!-- ![Teacher Management](path/to/teacher-management-screenshot.png) -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### School Statistics
+<!-- ![School Statistics](path/to/school-statistics-screenshot.png) -->
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [React](https://reactjs.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- Freepik for images
+- Postman API Documentation
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with ♥ by [Xitija](https://github.com/Xitija)
