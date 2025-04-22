@@ -9,6 +9,7 @@ import TeacherForm from './features/teachers/TeacherForm';
 import TeacherDetail from './features/teachers/TeacherDetail';
 import HomeView from './components/HomeView';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer'; // Import Footer
 import { Toaster } from 'react-hot-toast';
 
 export default function App() {
@@ -34,6 +35,8 @@ export default function App() {
             <Route path="/teachers/edit/:id" element={<TeacherForm />} />
           </Routes>
         </div>
+        {/* Footer */}
+        <Footer />
       </Router>
     </div>
   );
